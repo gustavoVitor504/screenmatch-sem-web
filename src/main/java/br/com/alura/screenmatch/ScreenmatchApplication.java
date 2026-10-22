@@ -12,7 +12,7 @@ public class ScreenmatchApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		var consumoApi = new ConsumoApi();
-		var json = consumoApi.obterDados("https://www.omdbapi.com/?t=gilmore+girls&apikey=75d6e4c2");
+		var json = consumoApi.obterDados("https://www.omdbapi.com/?t=gilmore+girls&apikey="+System.getenv("OMDB_API_KEY"));
 		System.out.println(json);
 
 		//json = consumoApi.obterDados("https://coffee.alexflipnote.dev/random.json");
